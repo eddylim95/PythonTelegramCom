@@ -7,7 +7,7 @@ import Config
 class MessageHandler():
     __bot = telepot.Bot(Config.config['apiKey'])
     print(__bot.getMe())
-    __userId = 264234098
+    __userId = Config.config['userId']
 
     def start(self):
         MessageHandler.__bot.sendMessage(MessageHandler.__userId, "Pi online, ready to receive messages")
