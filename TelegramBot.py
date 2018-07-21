@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from telegram.ext import Updater, CommandHandler
-from PiCam import PiCam
+from CameraModules.PiCam import PiCam
 from Config import config
 
 class TelegramBot:
