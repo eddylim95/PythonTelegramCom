@@ -1,7 +1,7 @@
 from datetime import datetime
 
 from telegram.ext import Updater, CommandHandler
-
+from PiCam import PiCam
 from Config import config
 
 class TelegramBot:
@@ -37,18 +37,18 @@ class TelegramBot:
             print("unauthorised message from " + update.message.chat_id)
 
     def __captureHandler(self, bot, update):
-        if (update.message.chat_id == int(config['userId'])):
+        if update.message.chat_id == int(config['userId']):
             try:
                 bot.send_message(chat_id=update.message.chat_id, text="Capturing...")
-                '''camera = PiCam()
+                camera = PiCam()
                 camera.Snap()
                 #subprocess.call("raspistill -o image.jpg")
                 bot.sendPhoto(chat_id=update.message.chat_id, photo=open("/home/pi/image.jpg", 'rb'))
-                '''
+
             except Exception as e:
                 bot.send_message(chat_id=update.message.chat_id, text="Failed to capture")
                 print(e)
 
     def __stopHandler(self, bot, update):
-        if (update.message.chat_id == int(config['userId'])):
+        if update.message.chat_id == int(config['userId']):
             bot.send_message(chat_id=update.message.chat_id, text="Exit terminal")
