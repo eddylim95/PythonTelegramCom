@@ -1,4 +1,3 @@
-'''
 from picamera import PiCamera
 import datetime
 import time
@@ -13,4 +12,3 @@ class PiCam():
         #Camera warm up time
         time.sleep(2)
         self.__camera.capture(self.__imgPath)
-        '''
