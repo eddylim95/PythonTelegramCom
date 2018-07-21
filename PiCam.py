@@ -1,12 +1,16 @@
+'''
 from picamera import PiCamera
 import datetime
 import time
 
-class Camera():
-    def Snap(self, targetPath):
-        camera = PiCamera()
-        camera.resolution = (1024, 768)
-        camera.start_preview()
+class PiCam():
+    __camera = PiCamera()
+    __imgPath = "/home/pi/image.jpg"
+    __camera.resolution = (1024, 768)
+
+    def Snap(self):
+        self.__camera.start_preview()
         #Camera warm up time
         time.sleep(2)
-        camera.capture(targetPath)
+        self.__camera.capture(self.__imgPath)
+        '''

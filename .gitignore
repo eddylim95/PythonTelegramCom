@@ -3,8 +3,3 @@ Config.py
 .idea/
 .idea/workspace.xml
 .vscode/settings.json
-.idea/workspace.xml
-venv/Lib/site-packages/aiohttp-3.3.1.dist-info/INSTALLER
-venv/Lib/site-packages/aiohttp-3.3.1.dist-info/LICENSE.txt
-venv/Lib/site-packages/aiohttp-3.3.1.dist-info/METADATA
-venv/Lib/site-packages/aiohttp-3.3.1.dist-info/RECORD

@@ -1,5 +1,3 @@
-
-import requests
 from alpha_vantage.timeseries import TimeSeries
 from alpha_vantage.techindicators import TechIndicators
 import matplotlib.pyplot as plt

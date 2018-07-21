@@ -1,5 +1,5 @@
-from PiCam import Camera
+from PiCam import PiCam
 
 targetPath = "/home/pi/image.jpg"
-camera = Camera()
+camera = PiCam()
 camera.Snap(targetPath)
