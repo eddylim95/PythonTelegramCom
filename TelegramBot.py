@@ -18,25 +18,25 @@ class TelegramBot:
             dispatcher.add_handler(capture_CommandHandler)
             dispatcher.add_handler(stop_CommandHandler)
 
-            updater.start_polling()
-            print("Telegram Bot Setup Done!")
+            updater.start_polling(0.5)
+            print("Telegram bot started!")
 
         except Exception as e:
             print(e)
 
-    def __startHandler(bot, update):
+    def __startHandler(self, bot, update):
         if (update.message.chat_id == int(config['userId'])):
             try:
                 time = datetime.now()
-                bot.send_message(chat_id=update.message.chat_id, text="Bot online: "+ str(time))
                 print("Bot online: "+ str(time))
+                bot.send_message(chat_id=update.message.chat_id, text="Bot online: "+ str(time))
             except Exception as e:
                 print(e)
         else:
             bot.send_message(chat_id=update.message.chat_id, text="Unauthorised")
             print("unauthorised message from " + update.message.chat_id)
 
-    def __captureHandler(bot, update):
+    def __captureHandler(self, bot, update):
         if (update.message.chat_id == int(config['userId'])):
             try:
                 bot.send_message(chat_id=update.message.chat_id, text="Capturing...")
@@ -49,6 +49,6 @@ class TelegramBot:
                 bot.send_message(chat_id=update.message.chat_id, text="Failed to capture")
                 print(e)
 
-    def __stopHandler(bot, update):
+    def __stopHandler(self, bot, update):
         if (update.message.chat_id == int(config['userId'])):
             bot.send_message(chat_id=update.message.chat_id, text="Exit terminal")
